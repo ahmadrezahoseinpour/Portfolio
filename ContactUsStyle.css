@@ -1,0 +1,88 @@
+html{
+    background: #000000;
+    color: #ffffff;
+    overflow: hidden;
+}
+.contactUs{
+    height: 100vh;
+    /* width: 100%; */
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+    padding: 20px;
+}
+body{
+    margin: 0;
+
+}
+tr th, tr td, p{
+    padding: 5px 5px;
+    font-weight: bold;
+    font-size: 19px;
+    letter-spacing: .3px;
+}
+p{
+    font-size: 33px;
+    letter-spacing: .4px;    
+}
+tbody{
+    width: 100%;
+}
+.label{
+    display: flex;
+    justify-content: center;
+}   
+
+.info, .label{
+    /* width: 100%; */
+}
+.label{
+    /* display: flex; */
+}
+.logo{
+    margin-bottom: 120px;
+}
+
+.imgLogo{
+    max-width: 120px;
+    height: 120px;
+}
+.contactUsSection{
+    width: 100%;
+}
+table{
+    width: 100%;
+}
+tr td{
+    float: right;
+}
+tr th{
+    float: left;
+}
+
+@media screen and (max-width: 1200px) {
+    p{
+        font-size: 30px !important;
+    }
+    th, td{
+        font-size: 17px !important;
+    }
+    .logo{
+        /* max-width: 75px;
+        height: 75px; */
+    }
+}
+@media screen and (max-width: 700px) {
+    p{
+        font-size: 28px !important;
+    }
+    
+    th, td{
+        font-size: 15px !important;
+    }
+    
+    .logo{
+        /* max-width: 50px;
+        height: 50px; */
+    }
+}

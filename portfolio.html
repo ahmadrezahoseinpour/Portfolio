@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="BlueZoneStudio">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Ahmadreza">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/portfolioStyle.css">
+</head>
+<body>
+    <header id="header" class="header">
+        <ul>
+            <li><a href="/portfolio.html">نمونه کار و پورتفولیو</a></li>
+            <li><a href="/AboutUs.html" id="scrollToTargetLink">درباره ما</a></li>
+            <li><a href="/Index.html"><img src="/Bluezone-bcopy.png " style="max-height: 50px; width: auto;"></a></li>
+            <li><a href="/ContactUs.html">راه های ارتباطی</a></li>
+            <li><a href="/ContactUs.html">همکاری</a></li>
+        </ul>
+    </header>
+
+    <section class="image-grid">
+        <section class="first-Grid sub-Grid">
+            <div class="image-item"><img src="wallpaper10.jpg" alt="Image 1"></div>
+            <div class="image-item"><img src="wallpaper6.jpg" alt="Image 1"></div>
+            <div class="image-item"><img src="wallpaper3.jpg" alt="Image 4"></div>
+            <div class="image-item"><img src="wallpaper4.jpg" alt="Image 5"></div>
+        </section>
+        <section class="second-Grid sub-Grid">
+            <div class="image-item"><img src="wallpaper2.jpg" alt="Image 3"></div>
+            <div class="image-item"><img src="wallpaper1.jpg" alt="Image 2"></div>
+            <div class="image-item"><img src="wallpaper5.jpg" alt="Image 6"></div>
+            <div class="image-item"><img src="wallpaper5.jpg" alt="Image 2"></div>
+        </section>
+        <section class="third-Grid sub-Grid">
+            <div class="image-item"><img src="wallpaper4.jpg" alt="Image 3"></div>
+            <div class="image-item"><img src="wallpaper3.jpg" alt="Image 4"></div>
+            <div class="image-item"><img src="wallpaper2.jpg" alt="Image 5"></div>
+            <div class="image-item"><img src="wallpaper1.jpg" alt="Image 6"></div>
+        </section>
+        
+        <!-- Add more images as needed -->
+    </section>
+    
+    <script>
+        const imageElement3 = document.getElementById("header");
+        
+        setTimeout(function() {
+        imageElement3.classList.add("show"); // Hide the image with animation
+        }, 1500); // Adjust delay for showing the image (in milliseconds)
+    </script>
+    
+</body>
+</html>

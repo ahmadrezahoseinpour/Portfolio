@@ -1,0 +1,481 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    color: #000000;
+    
+}
+
+body, html {
+    margin: 0;
+    /*font-family: 'Vazirmatn';*/
+    padding: 0;
+    overflow:hidden;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('fonts/webfonts/Vazirmatn-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Vazirmatn;
+    src: url('fonts/webfonts/Vazirmatn-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Vazirmatn;
+    src: url('fonts/webfonts/Vazirmatn-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Vazirmatn;
+    src: url('fonts/webfonts/Vazirmatn-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Vazirmatn;
+    src: url('fonts/webfonts/Vazirmatn-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+body{
+    height: 100vh;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+#header{
+    opacity: 0;
+    width: auto;
+    position: fixed;
+    display: flex;  
+    backdrop-filter: blur(250px);
+    
+}
+#header.show{
+    position: fixed;
+    height: 7.75vh;
+    z-index: 1;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.5s ease-out; /* Animation properties */
+}
+
+.header ul{
+    display: flex;
+    list-style: none;
+    justify-items: center;
+    justify-content: space-between;
+    width: 100%; 
+    padding: 3px 5px;
+    align-items: center;
+}
+.header li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.header li:hover{
+    background-color:#000000;
+    color: #ffffff;
+}
+.header a{
+    justify-content: center;
+    display: flex;
+    font-weight: 600;
+    font-size: 17px;
+    width: fit-content;
+    color: #000000;
+
+}
+.header a:hover{
+    color: #222222;
+    width: fit-content;
+    font-weight: 900;
+    transition: opacity 0.5s ease-out;
+}
+
+    .sub-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background-color: #f4f4f4;
+      position: relative;
+      transition: all 1s ease-in-out;
+    }
+
+    .logo {
+      width: 1000px;  transform: translate(-0%, -0%);
+      transition: all 1s ease-in-out;
+    }
+
+    .welcome {
+      display: none;
+      position: absolute;
+      transform: translateX(-50%);
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .sub-container.small {
+      width: 30%;
+
+    }
+    .sub-container.small .logo {
+      width: 250px;
+      position: absolute;
+    }
+
+    .welcome.small {
+      display: block;
+    }
+  
+ @media screen and (max-width: 950px), screen and  (max-height: 1000px) {
+     
+     .logo {
+      width: 800px;
+     }
+ }    
+ @media screen and (max-width: 888px), screen and  (max-height: 800px) {
+     
+     .logo {
+      width:790px;
+     }
+ }  
+   
+ @media screen and (max-width: 725px), screen and  (max-height: 725px) {
+     
+     .logo {
+      width:450px;
+     }
+ }   
+ @media screen and (max-width: 500px), screen and  (max-height: 500px) {
+     
+     .logo {
+      width:325px;
+     }
+ }  
+ 
+.photos-container ,.videos-container ,.webdesigns-container ,.graphics-container {
+    
+    height: 200px;
+    overflow: hidden; /* Hide overflowing content */
+    position: relative;
+  }
+  
+  .photos-container img ,.videos-container img ,.webdesigns-container img ,.graphics-container img {
+    width: 100%; /* Images fill container width */
+    object-fit: cover;
+    position: absolute; /* Stack images on top of each other */
+    opacity: 0;  /* Initially hide all images */
+    transition: opacity 1s ease-in-out; /* Smooth transition for fade effect */
+    height: 100%;
+  }
+  
+  .photos-container img.active ,.videos-container img.active ,.webdesigns-container img.active ,.graphics-container img.active {
+    opacity: 1; /* Show the active image */
+  }
+  .photos , .videos, .webdesigns, .graphics{
+    align-items: center;
+      display: flex;
+      width: 100%;
+      color: #000000;
+      height: 100vh;
+  }
+  .imageContent{
+      height: 100%;
+      width: 70%;
+
+  }
+  .controls {
+    position: absolute;
+    bottom: 10px; /* Adjust positioning as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgb(247, 247, 247); /* Adjust color */
+    margin: 6px;
+    cursor: pointer;
+  }
+  
+  .circle.active {
+    background-color: #000; /* Adjust color for active circle */
+  }
+  
+#container.hidden{
+    opacity: 1;
+    transition: all 1s ease-out; /* Animation properties */
+    z-index: 1;
+    
+}
+.resume{background-color: #ffffff;}
+#container.remove{
+display: none;
+z-index: 1;
+}
+
+#baseSection{
+    opacity: 0;
+}
+
+#containerrow{
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory; /* Enable snapping */
+}
+#containerrow section{
+scroll-snap-align: end; /* Snap to the left edge */
+width: 200px; /* Adjust item width for smaller movements */
+white-space: nowrap; /* Prevent text wrapping */
+}
+
+.mainClass{
+    display: flex;
+    flex-direction: column;
+}
+.second button{
+    padding: 8px 30px;
+    border-radius: 50px;
+    background-color: #ffffff;
+    transition: all .25s ease-in;
+}
+.second button:hover{
+    background-color: #000000;
+    color: #ffffff;
+    transition: all .25s ease-in;
+    padding: 8px 50px;
+    font-size: 15px;
+    border: solid 1.6px black;
+}
+.text{
+    margin-bottom: 40px;
+}
+.second{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.text{
+    min-height: 25vh;
+}
+.portfolio-container{
+    width: 100;
+    margin: 20px 100px;
+}
+.cameraimg{
+    width: 100%;height:100vh; object-fit:cover;
+}
+.flip-img-wrap{
+    float: left;
+    width:  200px;
+    height: 200px;
+    object-fit: cover;
+}
+.element{
+    width: fit-content;
+    display: inline-block;
+}
+#page {
+    overflow: hidden; /* Hide overflow content */
+    height: 100vh; /* Set container height to viewport height */
+    position: relative; /* Establish reference point for positioning */
+  }
+  
+  
+#page .section:nth-child(1) { /* Style the first slide initially */
+    transform: translateX(0); /* No horizontal movement */
+  }
+li{
+    width: 100%;
+}
+.baseSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    min-height: 50vh;
+}
+.second{
+    width: 30%;
+    padding: 20px;
+}
+.descriptionContent{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    width: 50%;
+    padding: 20px;
+    color: #000000;
+}
+.Nimascroll{
+    scroll-snap-type: y mandatory;
+}
+
+a{
+    text-decoration: none;
+}
+
+.section{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure slides fill container width */
+    height: 100%; /* Each slide takes up the full container height */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
+    color: white;
+    scroll-snap-align: end;   
+}
+.scrolling{
+    height: 93vh;
+}
+.firstSection{
+    background: url("/whiteBackground.jpg");
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.Nimascroll{
+    scroll-snap-type: y mandatory;
+}
+
+.container{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    }
+#baseSection.show{ 
+    opacity: 1;
+    transition: opacity 1s ease-out; /* Animation properties */
+}
+.footerSection{
+    display: flex;
+    padding: 100px;
+    flex-direction: column;
+
+}
+@media screen and (max-width: 1200px) {
+    .header a{
+        font-size: 15px;
+    }
+    .imgLogo{
+        max-height: 40px;
+    width: 40px;
+    }
+    
+    #blur-image.resize{
+        height: auto;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    }
+    .circle {
+        width: 12px;
+        height: 12px;
+  }
+
+@media screen and (max-width: 1000px) {
+        
+    #blur-image.resize{
+    }
+}
+@media screen and (max-width: 800px) {
+    a {
+        letter-spacing:0.6px;
+        font-size:10px;
+    }
+    #blurclass{
+        width: 100%;
+        height: auto;        
+    }
+    #blurclass.resize{
+        width: 100%;
+    }
+    #blur-image.resize{
+        height: 300px;
+        transition: all 1s ease-in;
+        width: auto;
+    }
+    #blurclass{
+        width: 100%;
+        height: auto;
+    }
+    
+    .img-logo{
+        max-height: 35px;
+    width: 35px;
+    }
+    button{
+        font-size: 13px;
+    }
+    .header a{
+        font-size: 13px;
+    }
+    li{
+        width: fit-content;
+    }
+    section .webdesigns, section .photo{
+        flex-direction:column;
+    }
+    .imageContent{
+        width:100%;
+        
+    }
+    #blur-image.resize{
+
+    }
+    .second{
+        width:100%;
+    }
+    .text{
+        margin-bottom: 0;
+        min-height: 20vh;
+    }
+    section .video, section .graphics{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+      
+  .circle {
+    width: 10px;
+    height: 10px;
+  }
+    .footerSection{
+        padding: 0;
+    }
+    .descriptionContent{
+        padding: 0;
+        margin: 30px 0;
+    }
+  }   
+  .imgLogo{
+  max-height: 45px;}
